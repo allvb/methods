@@ -15,14 +15,17 @@ test('testing Character', () => {
 
 test('testing Character errors', () => {
   expect(() => {
-    const player = new Character('1');
-  }).toThrowError('Введено имя с неподходящими параметрами');
+    const player = new Character(1);
+    player.name = 1;
+  }).toThrowError('Ошибка, имя должно быть строкой, а не числом или чем-то иным');
   expect(() => {
     const player = new Character('R');
-  }).toThrowError('Введено имя с неподходящими параметрами');
+    player.name = 'R';
+  }).toThrowError('Ошибка, длина имени должна быть от 2 до 10 символов');
   expect(() => {
     const player = new Character('RobinRobinRobin');
-  }).toThrowError('Введено имя с неподходящими параметрами');
+    player.name = 'RobinRobinRobin';
+  }).toThrowError('Ошибка, длина имени должна быть от 2 до 10 символов');
 });
 
 test('testing Bowman', () => {
