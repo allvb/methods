@@ -3,14 +3,29 @@ import Swordsman from '../js/Swordsman';
 test('testing methods', () => {
   const player = new Swordsman('Robin');
 
+  const playerUp = {
+    name: 'Robin',
+    type: 'Swordsman',
+    level: 2,
+    health: 100,
+    attack: 48,
+    defence: 12,
+  };
+
+  const playerDamaged = {
+    name: 'Robin',
+    type: 'Swordsman',
+    level: 2,
+    health: 91,
+    attack: 48,
+    defence: 12,
+  };
+
   player.levelUp();
-  expect(2).toBe(player.level);
-  expect(100).toBe(player.health);
-  expect(48).toBe(player.attack);
-  expect(12).toBe(player.defence);
+  expect(player).toEqual(playerUp);
 
   player.damage(10);
-  expect(91).toEqual(player.health);
+  expect(player).toEqual(playerDamaged);
 });
 
 test('testing Character errors', () => {

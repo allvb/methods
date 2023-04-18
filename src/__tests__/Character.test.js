@@ -8,9 +8,13 @@ import Daemon from '../js/Daemon';
 
 test('testing Character', () => {
   const player = new Character('Oleg');
-  expect('Oleg').toBe(player.name);
-  expect(100).toBe(player.health);
-  expect(1).toBe(player.level);
+
+  const plyaerToBe = {
+    name: 'Oleg',
+    level: 1,
+    health: 100,
+  };
+  expect(player).toEqual(plyaerToBe);
 });
 
 test('testing Character errors', () => {
@@ -30,48 +34,78 @@ test('testing Character errors', () => {
 
 test('testing Bowman', () => {
   const player = new Bowman('Robin');
-  expect('Robin').toBe(player.name);
-  expect('Bowman').toBe(player.type);
-  expect(25).toBe(player.attack);
-  expect(25).toBe(player.defence);
+  const testedPlayer = {
+    name: 'Robin',
+    type: 'Bowman',
+    level: 1,
+    health: 100,
+    attack: 25,
+    defence: 25,
+  };
+  expect(player).toEqual(testedPlayer);
 });
 
 test('testing Swordsman', () => {
   const player = new Swordsman('Robin');
-  expect('Robin').toBe(player.name);
-  expect('Swordsman').toBe(player.type);
-  expect(40).toBe(player.attack);
-  expect(10).toBe(player.defence);
+  const testedPlayer = {
+    name: 'Robin',
+    type: 'Swordsman',
+    level: 1,
+    health: 100,
+    attack: 40,
+    defence: 10,
+  };
+  expect(player).toEqual(testedPlayer);
 });
 
 test('testing Magician', () => {
   const player = new Magician('Robin');
-  expect('Robin').toBe(player.name);
-  expect('Magician').toBe(player.type);
-  expect(10).toBe(player.attack);
-  expect(40).toBe(player.defence);
+  const testedPlayer = {
+    name: 'Robin',
+    type: 'Magician',
+    level: 1,
+    health: 100,
+    attack: 10,
+    defence: 40,
+  };
+  expect(player).toEqual(testedPlayer);
 });
 
 test('testing Undead', () => {
   const player = new Undead('Robin');
-  expect('Robin').toBe(player.name);
-  expect('Undead').toBe(player.type);
-  expect(25).toBe(player.attack);
-  expect(25).toBe(player.defence);
+  const testedPlayer = {
+    name: 'Robin',
+    type: 'Undead',
+    level: 1,
+    health: 100,
+    attack: 25,
+    defence: 25,
+  };
+  expect(player).toEqual(testedPlayer);
 });
 
 test('testing Zombie', () => {
   const player = new Zombie('Robin');
-  expect('Robin').toBe(player.name);
-  expect('Zombie').toBe(player.type);
-  expect(40).toBe(player.attack);
-  expect(10).toBe(player.defence);
+  const testedPlayer = {
+    name: 'Robin',
+    type: 'Zombie',
+    level: 1,
+    health: 100,
+    attack: 40,
+    defence: 10,
+  };
+  expect(player).toEqual(testedPlayer);
 });
 
 test('testing Daemon', () => {
   const player = new Daemon('Robin');
-  expect('Robin').toBe(player.name);
-  expect('Daemon').toBe(player.type);
-  expect(10).toBe(player.attack);
-  expect(40).toBe(player.defence);
+  const testedPlayer = {
+    name: 'Robin',
+    type: 'Daemon',
+    level: 1,
+    health: 100,
+    attack: 10,
+    defence: 40,
+  };
+  expect(player).toEqual(testedPlayer);
 });
